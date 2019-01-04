@@ -175,7 +175,7 @@ class Controller(object):
                 server.sendmail(config["username"], config["to_email"], message.as_string())
                 server.close()
         except Exception as inst:
-            sys.syslog("Error sending email: " + str(inst))
+            syslog.syslog("Error sending email: " + str(inst))
 
     def send_pushbullet(self, door, title, message):
         try:
